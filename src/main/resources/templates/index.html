@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body style="font-family: 'Roboto',sans-serif;" class="center-align">
+    <div class="section">
+        <h1>Ingresar producto</h1>
+        <p>Ingrese un producto en el siguiente formulario</p>
+    </div>
+    <form class="col s12 center-align" method="POST" th:action="@{/formProducto}" , th:object="${producto}">
+        <div class="row">
+            <div class="input-field col s4 offset-s4">
+                <label for="nombre">Nombre del produto: </label>
+                <input type="text" class="form-control" th:field="*{nombre}" id="nombre" />
+                <span class="helper-text" th:errors="*{nombre}" ></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4 offset-s4">
+                <label for="descripcion">Descripcion del producto: </label>
+                <input type="text" class="form-conzxtrol" th:field="*{descripcion}" id="descripcion" />
+                <span class="helper-text" th:errors="*{descripcion}" ></span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="input-field col s4 offset-s4">
+                <label for="precio">Precio del producto: </label>
+                <input type="number" class="form-control" th:field="*{precio}" id="precio" />
+                <span class="helper-text" th:errors="*{precio}" ></span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="input-field col s4 offset-s4">
+                <label for="vencimiento">Fecha de Vencimiento: </label>
+                <input type="text" class="form-control" th:field="*{vencimiento}" id="vencimiento" />
+                <span class="helper-text" th:errors="*{vencimiento}" ></span>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar producto</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo Robot</title>
+</head>
+
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <div class="row">
+        <form th:action="@{/seguridad}" th:object="${robot}" method="post">
+            <label for="soyRobot">
+                Marcar solo si usted es un robot
+            </label>
+            <input  type="radio" checked th:field="*{soyRobot}" th:value="${false}" name="soyRobot"
+                id="soyRobot" />
+            <br />
+            <small th:errors="*{soyRobot}" style="color: #ff0000;"></small>
+            <a class="btn btn-secondary" th:href="@{/producto}">Regresar</a>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+        </form>
+    </div>
+</body>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</html>
